@@ -2,6 +2,7 @@ export const handleUpload = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
   formData.append("upload_preset", process.env.NEXT_PUBLIC_UPLOAD_PRESET!);
+  formData.append("folder", "payment-receipts");
 
   try {
     const res = await fetch(
