@@ -142,7 +142,7 @@ export default function SubscribeProgramForm({
 
       <div className="grid w-full gap-3">
         <Label>اختر أقرب منطقة تدريب لك</Label>
-        <div className="flex items-center gap-6 mt-2">
+        <div className="flex items-center gap-6 mt-2 flex-wrap">
           {areas.map((area) => {
             if (area === "السيوف" && formik.values.carType !== "اوتوماتيك")
               return null;
