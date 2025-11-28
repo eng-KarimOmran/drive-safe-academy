@@ -49,7 +49,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           name="name"
-          placeholder="احمد محمد"
+          placeholder="مثال:احمد محمد"
         />
         {formik.errors.name && formik.touched.name && (
           <MessageError error={formik.errors.name} />

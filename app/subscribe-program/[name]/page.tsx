@@ -40,7 +40,15 @@ export default async function SubscribeProgram({
               امسح ال qr code او اضغط هنا للدفع
             </a>
           </Button>
-          <img src="/insta-pay.jpg" alt="insta-pay" className="w-3xs" />
+          <img
+            src="https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764313627/insta-pay_cju43s.jpg"
+            alt="insta-pay"
+            className="max-w-3xs"
+          />
+          <span>أو يمكنك الدفع مباشرة على رقم الهاتف</span>
+          <span className="font-bold text-2xl block mt-1 bg-(--main-color) p-1 rounded-lg text-white">
+            01277913201
+          </span>
         </div>
         <SubscribeProgramForm programName={programsMap[name]} />
       </div>

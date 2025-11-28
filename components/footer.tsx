@@ -42,7 +42,7 @@ export default function Footer() {
     {
       id: "tiktok",
       icon: <FaTiktok />,
-      url: "https://www.tiktok.com/@yourprofile",
+      url: "https://www.tiktok.com/@drive.safe_academy",
       color: "hover:text-black",
     },
   ];

@@ -16,6 +16,31 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "Drive-Safe Academy",
   description: "أكاديمية لتعليم القيادة بطريقة احترافية وآمنة.",
+  icons: {
+    icon: "https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764293017/logo_wkleeh.png",
+  },
+  openGraph: {
+    title: "Drive-Safe Academy",
+    description: "أكاديمية لتعليم القيادة بطريقة احترافية وآمنة.",
+    url: "https://drive-safe-academy-liard.vercel.app",
+    siteName: "Drive-Safe Academy",
+    images: [
+      {
+        url: "https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764293017/logo_wkleeh.png",
+        width: 1200,
+        height: 630,
+        alt: "Drive-Safe Academy",
+      },
+    ],
+    locale: "ar_EG",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Drive-Safe Academy",
+    description: "أكاديمية لتعليم القيادة بطريقة احترافية وآمنة.",
+    images: ["https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764293017/logo_wkleeh.png"],
+  },
 };
 
 export default function RootLayout({
