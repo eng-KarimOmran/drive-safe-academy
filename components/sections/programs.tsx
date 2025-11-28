@@ -14,6 +14,7 @@ import {
 import { MdTraffic } from "react-icons/md";
 import { IoSpeedometer } from "react-icons/io5";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Programs() {
   const programs = [
@@ -184,7 +185,9 @@ export default function Programs() {
           >
             {program.isSpecial && (
               <div className="absolute p-1 -rotate-12 w-30 text-center top-0 end-0 bg-(--title-color) text-white">
-                {program.id === "comprehensive" ? "الأكثر طلباً" : "الأكثر قيمة"}
+                {program.id === "comprehensive"
+                  ? "الأكثر طلباً"
+                  : "الأكثر قيمة"}
               </div>
             )}
             <h3 className="text-3xl font-bold text-(--second-color)">
@@ -216,8 +219,12 @@ export default function Programs() {
                 </li>
               ))}
             </ul>
-            <Button variant="main" className="w-full">
-              احجز الان
+            <Button variant="main" className="w-full" asChild>
+              <Link
+                href={`subscribe-program/${program.id}`}
+              >
+                احجز الان
+              </Link>
             </Button>
           </li>
         ))}

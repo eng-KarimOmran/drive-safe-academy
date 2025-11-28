@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -17,10 +18,10 @@ export default function HeroSection() {
         </p>
         <div className="flex md:justify-center lg:justify-start items-center gap-4">
           <Button asChild variant="main">
-            <a href="#programs">احجز الآن</a>
+            <Link href="/#programs">احجز الآن</Link>
           </Button>
           <Button asChild variant="second">
-            <a href="#contact">تواصل معنا</a>
+            <Link href="/#contact">تواصل معنا</Link>
           </Button>
         </div>
       </div>

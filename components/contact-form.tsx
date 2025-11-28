@@ -48,6 +48,7 @@ export default function ContactForm() {
           value={formik.values.name}
           type="text"
           id="name"
+          name="name"
           placeholder="احمد محمد"
         />
         {formik.errors.name && formik.touched.name && (
@@ -62,6 +63,7 @@ export default function ContactForm() {
           value={formik.values.tel}
           type="tel"
           id="tel"
+          name="tel"
           placeholder="01xxxxxxxxx"
         />
         {formik.errors.tel && formik.touched.tel && (
@@ -76,6 +78,7 @@ export default function ContactForm() {
           value={formik.values.message}
           id="message"
           placeholder="اكتب رسالتك هنا"
+          name="message"
         />
         {formik.errors.message && formik.touched.message && (
           <MessageError error={formik.errors.message} />

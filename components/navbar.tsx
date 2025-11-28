@@ -2,16 +2,17 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./mode-toggle";
+import Link from "next/link";
 
 export default function Navbar() {
   const navLinks = [
-    { path: "#home", label: "الرئيسية" },
-    { path: "#why-us", label: "ليه تختارنا" },
-    { path: "#programs", label: "برامجنا" },
-    { path: "#trainers", label: "المدربون" },
-    { path: "#reviews", label: "آراء المتدربين" },
-    { path: "#faq", label: "الأسئلة الشائعة" },
-    { path: "#contact", label: "تواصل معنا" },
+    { path: "/#home", label: "الرئيسية" },
+    { path: "/#why-us", label: "ليه تختارنا" },
+    { path: "/#programs", label: "برامجنا" },
+    { path: "/#trainers", label: "المدربون" },
+    { path: "/#reviews", label: "آراء المتدربين" },
+    { path: "/#faq", label: "الأسئلة الشائعة" },
+    { path: "/#contact", label: "تواصل معنا" },
   ];
 
   return (
@@ -31,18 +32,18 @@ export default function Navbar() {
         <ul className="hidden lg:flex justify-center items-center gap-4">
           {navLinks.map((link) => (
             <li key={link.path}>
-              <a
+              <Link
                 className="hover:text-(--main-color) transition-colors duration-300"
                 href={link.path}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
         <div className="flex justify-center items-center gap-2">
           <Button variant="main" asChild>
-            <a href="#programs">احجز الآن</a>
+            <Link href="/#programs">احجز الآن</Link>
           </Button>
           <ModeToggle />
         </div>

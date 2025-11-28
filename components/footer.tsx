@@ -1,16 +1,17 @@
+import Link from "next/link";
 import React from "react";
 import { FaInstagram, FaFacebook, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
 export default function Footer() {
   const navLinks = [
-    { path: "#home", label: "الرئيسية" },
-    { path: "#why-us", label: "ليه تختارنا" },
-    { path: "#programs", label: "برامجنا" },
-    { path: "#trainers", label: "المدربون" },
-    { path: "#reviews", label: "آراء المتدربين" },
-    { path: "#faq", label: "الأسئلة الشائعة" },
-    { path: "#contact", label: "تواصل معنا" },
+    { path: "/#home", label: "الرئيسية" },
+    { path: "/#why-us", label: "ليه تختارنا" },
+    { path: "/#programs", label: "برامجنا" },
+    { path: "/#trainers", label: "المدربون" },
+    { path: "/#reviews", label: "آراء المتدربين" },
+    { path: "/#faq", label: "الأسئلة الشائعة" },
+    { path: "/#contact", label: "تواصل معنا" },
   ];
 
   const socialMedia = [
@@ -95,12 +96,12 @@ export default function Footer() {
           <ul className="grid grid-cols-2 gap-2">
             {navLinks.map((link) => (
               <li key={link.path}>
-                <a
+                <Link
                   className="text-ring hover:text-(--main-color) transition-colors duration-300"
                   href={link.path}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -127,11 +128,10 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Karim Omran
+          Karim Omran{" "}
         </a>
         © 2025 – All Rights Reserved
       </div>
-      <a href="http://"></a>
     </footer>
   );
 }
