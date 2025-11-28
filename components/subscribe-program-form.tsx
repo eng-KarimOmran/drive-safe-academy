@@ -9,6 +9,7 @@ import { Spinner } from "./ui/spinner";
 import { handleUpload } from "@/lib/uploadToCloudinary";
 import { toast } from "sonner";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface SubscribeProgramFormProps {
   programName: string;
@@ -19,6 +20,7 @@ export default function SubscribeProgramForm({
 }: SubscribeProgramFormProps) {
   const carTypes = ["مانيوال", "اوتوماتيك"];
   const areas = ["الشاطبي", "سموحة", "السيوف"];
+  const router = useRouter();
   const formik = useFormik({
     initialValues: {
       programName,
@@ -47,7 +49,7 @@ export default function SubscribeProgramForm({
       const data = await res.json();
       if (data.success) {
         toast.success("تم تأكيد اشتراكك. سيتواصل معك فريقنا لحجز المواعيد.");
-        formik.resetForm();
+        router.replace("/");
       } else {
         toast.error("حدث خطأ أثناء إرسال البيانات.");
       }

@@ -31,7 +31,6 @@ export default async function SubscribeProgram({
             لتأكيد الأشتراك يجب تحويل مبلغ
             <span className="text-(--main-color)"> 50 </span> ج.م
           </span>
-          <img src="/insta-pay.jpg" alt="insta-pay" className="w-3xs" />
           <Button asChild>
             <a
               href="https://ipn.eg/S/karim.omran.2004/instapay/0R3Tbb"
@@ -41,6 +40,7 @@ export default async function SubscribeProgram({
               امسح ال qr code او اضغط هنا للدفع
             </a>
           </Button>
+          <img src="/insta-pay.jpg" alt="insta-pay" className="w-3xs" />
         </div>
         <SubscribeProgramForm programName={programsMap[name]} />
       </div>
