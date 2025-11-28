@@ -18,7 +18,7 @@ export default function Footer() {
     {
       id: "instagram",
       icon: <FaInstagram />,
-      url: "https://www.instagram.com/yourprofile",
+      url: "https://www.instagram.com/drive_safe_academy",
       color: "hover:text-pink-500",
     },
     {
