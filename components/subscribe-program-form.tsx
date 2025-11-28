@@ -8,6 +8,7 @@ import { formSubscribeSchema } from "@/lib/schema-form-subscribe";
 import { Spinner } from "./ui/spinner";
 import { handleUpload } from "@/lib/uploadToCloudinary";
 import { toast } from "sonner";
+import { useEffect } from "react";
 
 interface SubscribeProgramFormProps {
   programName: string;
@@ -18,7 +19,6 @@ export default function SubscribeProgramForm({
 }: SubscribeProgramFormProps) {
   const carTypes = ["مانيوال", "اوتوماتيك"];
   const areas = ["الشاطبي", "سموحة", "السيوف"];
-
   const formik = useFormik({
     initialValues: {
       programName,
@@ -53,7 +53,9 @@ export default function SubscribeProgramForm({
       }
     },
   });
-
+  useEffect(() => {
+    formik.setFieldValue("trainingArea", "");
+  }, [formik.values.carType]);
   return (
     <form
       className="shadow-lg rounded-2xl space-y-6 bg-accent p-4"
