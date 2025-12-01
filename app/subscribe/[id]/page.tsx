@@ -2,16 +2,20 @@ import SectionTitle from "@/components/section-title";
 import SubscribeProgramForm from "@/components/sections/programs/subscribe-program-form";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
-import programsJson from "../../../components/sections/programs/data-program.json";
+import programsData from "../../../components/sections/programs/data-program.json";
+import { IProgram } from "@/type/type";
 export default async function SubscribeProgram({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const programs = JSON.parse(programsJson);
-  const program = programs[name];
-
+  const programs = programsData as IProgram[];
+  const index = programs.findIndex((p) => p.id === id);
+  if (index === -1) {
+    return redirect("/#programs");
+  }
+  const program = programs[index];
   return (
     <section className="px-4 py-5">
       <SectionTitle label="تأكيد الاشتراك" />
@@ -43,17 +47,12 @@ export default async function SubscribeProgram({
             01229392703
           </span>
         </div>
+        <SubscribeProgramForm programName={program.heading} />
       </div>
     </section>
   );
 }
 
+// if (!id || !programsMap[id]) {
+// }
 
-
-
-
-  // if (!id || !programsMap[id]) {
-  //   return redirect("/#programs");
-  // }
-
-          // <SubscribeProgramForm programName={programsMap[name]} />
