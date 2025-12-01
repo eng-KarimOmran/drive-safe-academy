@@ -3,6 +3,7 @@ import Comparison from "../comparison/comparison";
 import featuresData from "./data-why-us.json";
 import Sections from "@/components/Sections";
 import { ISettingsSections, IWhyUsCard } from "@/type/type";
+import { splitByWord } from "@/lib/utils";
 export default function WhyUs() {
   const features = featuresData as IWhyUsCard[];
   const settings: ISettingsSections = {
@@ -24,7 +25,11 @@ export default function WhyUs() {
               <div>{feature.title}</div>
             </header>
             <p className="text-lg max-w-2/3 text-center text-ring">
-              {feature.description}
+              {splitByWord(feature.description, "99%").map((text, i) => (
+                <span key={i} className={i === 1 ? "text-(--main-color)" : ""}>
+                  {text}
+                </span>
+              ))}
             </p>
           </li>
         ))}

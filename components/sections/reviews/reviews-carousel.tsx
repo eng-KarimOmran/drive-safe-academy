@@ -39,7 +39,7 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
   }, [current]);
 
   return (
-    <div className="space-y-2 my-4">
+    <div className="space-y-2 my-4 p-4 bg-accent rounded-2xl">
       <Carousel dir="ltr" setApi={setApi} className="w-9/12 mx-auto max-w-xl">
         <CarouselContent>
           {videos.map((video) => (
