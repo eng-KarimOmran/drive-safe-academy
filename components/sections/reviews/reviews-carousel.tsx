@@ -33,7 +33,7 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
     videos.forEach((v, i) => {
       videoRefs.current[i].pause();
       if (i + 1 === current) {
-        videoRefs.current[i].preload = "metadata";
+        videoRefs.current[i].preload = "auto";
       }
     });
   }, [current]);
@@ -53,7 +53,8 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
                   controls
                   className="mx-auto max-h-96 object-contain rounded-lg"
                   title={video.alt}
-                  preload="none"
+                  preload="metadata"
+                  playsInline={true}
                 />
                 <div dir="rtl" className="hidden md:flex flex-col">
                   <div className="flex items-center gap-2 py-2">
