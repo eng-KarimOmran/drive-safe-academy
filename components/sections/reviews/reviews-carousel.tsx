@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/carousel";
 import { IVideo } from "@/type/type";
 import GetIcon from "@/components/get-icon";
-import { Button } from "@/components/ui/button";
 
 export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
   const [api, setApi] = React.useState<CarouselApi>();
