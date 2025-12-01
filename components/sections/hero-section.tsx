@@ -14,7 +14,7 @@ export default function HeroSection() {
         </h3>
         <p>
           نقدم دورات لتعليم قيادة السيارات الأتوماتيك والمانيوال مع مدربين
-          معتمدين وخبرة تزيد عن 10 عاماً
+          معتمدين وخبرة تزيد عن 7 عاماً
         </p>
         <div className="flex md:justify-center lg:justify-start items-center gap-4">
           <Button asChild variant="main">

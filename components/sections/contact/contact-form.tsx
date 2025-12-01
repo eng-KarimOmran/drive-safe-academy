@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-import { useFormik } from "formik";
-import { Spinner } from "./ui/spinner";
 import { toast } from "sonner";
 import { formContactSchema } from "@/lib/schema-form-contact";
-import MessageError from "./message-error";
+import { useFormik } from "formik";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import MessageError from "@/components/message-error";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function ContactForm() {
   const formik = useFormik({
@@ -49,7 +49,7 @@ export default function ContactForm() {
           type="text"
           id="name"
           name="name"
-          placeholder="مثال:احمد محمد"
+          placeholder="اكتب اسمك هنا"
         />
         {formik.errors.name && formik.touched.name && (
           <MessageError error={formik.errors.name} />

@@ -3,9 +3,9 @@
 import { useFormik } from "formik";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "./ui/button";
+import { Button } from "../../ui/button";
 import { formSubscribeSchema } from "@/lib/schema-form-subscribe";
-import { Spinner } from "./ui/spinner";
+import { Spinner } from "../../ui/spinner";
 import { handleUpload } from "@/lib/uploadToCloudinary";
 import { toast } from "sonner";
 import { useEffect } from "react";
@@ -15,9 +15,7 @@ interface SubscribeProgramFormProps {
   programName: string;
 }
 
-export default function SubscribeProgramForm({
-  programName,
-}: SubscribeProgramFormProps) {
+export default function SubscribeProgramForm({programName}: SubscribeProgramFormProps) {
   const carTypes = ["مانيوال", "اوتوماتيك"];
   const areas = ["الشاطبي", "سموحة", "السيوف"];
   const router = useRouter();
@@ -80,7 +78,7 @@ export default function SubscribeProgramForm({
           type="text"
           name="name"
           id="name"
-          placeholder="مثال: احمد محمد"
+          placeholder="اكتب اسمك هنا"
           value={formik.values.name}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}

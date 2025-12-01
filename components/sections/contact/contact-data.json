@@ -1,0 +1,26 @@
+[
+  {
+    "id": "phone",
+    "icon": "FaPhone",
+    "label": "الهاتف",
+    "value": "01553683135"
+  },
+  {
+    "id": "email",
+    "icon": "IoMdMail",
+    "label": "البريد الإلكتروني",
+    "value": "algnana740@gmail.com"
+  },
+  {
+    "id": "location",
+    "icon": "FaLocationDot",
+    "label": "عنونا",
+    "value": "أبراج سيدي جابر، البرج الخامس، الدور الأول — محافظة الإسكندرية، مصر."
+  },
+  {
+    "id": "clock",
+    "icon": "FaClock",
+    "label": "ساعات العمل",
+    "value": "السبت - الخميس: ١٠:٠٠ ص - ١٠:٠٠ م"
+  }
+]
