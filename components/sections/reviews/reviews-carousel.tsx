@@ -53,8 +53,8 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
                   controls
                   className="mx-auto max-h-96 object-contain rounded-lg"
                   title={video.alt}
-                  // playsInline
-                  // webkit-playsinline
+                  playsInline
+                  webkit-playsinline
                 />
                 <div dir="rtl" className="hidden md:flex flex-col">
                   <div className="flex items-center gap-2 py-2">
