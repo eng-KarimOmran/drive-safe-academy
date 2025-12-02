@@ -31,9 +31,6 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
   React.useEffect(() => {
     videos.forEach((v, i) => {
       videoRefs.current[i].pause();
-      if (i + 1 === current) {
-        videoRefs.current[i].preload = "auto";
-      }
     });
   }, [current]);
 
@@ -56,8 +53,9 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
                   controls
                   className="mx-auto max-h-96 object-contain rounded-lg"
                   title={video.alt}
-                  preload="auto"
-                  playsInline={true}
+                  playsInline
+                  controlsList="nodownload"
+                  webkit-playsinline
                 />
                 <div dir="rtl" className="hidden md:flex flex-col">
                   <div className="flex items-center gap-2 py-2">
