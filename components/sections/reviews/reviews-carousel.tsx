@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/carousel";
 import { IVideo } from "@/type/type";
 import GetIcon from "@/components/get-icon";
-
 export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -40,7 +39,11 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
 
   return (
     <div className="space-y-2 my-4 p-5 bg-accent rounded-2xl">
-      <Carousel dir="ltr" setApi={setApi} className="w-9/12 mx-auto max-w-xl md:border border-dashed border-(--main-color) md:p-2 rounded-2xl">
+      <Carousel
+        dir="ltr"
+        setApi={setApi}
+        className="w-9/12 mx-auto max-w-xl md:border border-dashed border-(--main-color) md:p-2 rounded-2xl"
+      >
         <CarouselContent>
           {videos.map((video) => (
             <CarouselItem key={video.id}>
@@ -62,9 +65,9 @@ export function ReviewsCarousel({ videos }: { videos: IVideo[] }) {
                     <div>
                       <span>ا / {video.name}</span>
                       <div className="flex items-center gap-1 text-yellow-500 text-xs">
-                        {Array.from({ length: 5 }).map((_, i) =>
-                          GetIcon("IoIosStar")
-                        )}
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <span key={i}>{GetIcon("IoIosStar")}</span>
+                        ))}
                       </div>
                     </div>
                   </div>
