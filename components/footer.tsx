@@ -51,17 +51,14 @@ export default function Footer() {
     <footer className="bg-accent py-5">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
         <div className="flex flex-col gap-4 md:items-center">
-          <div className="flex items-center">
+          <a href="/" className="flex justify-center items-center flex-col">
             <img
-              className="w-20"
+              className="w-16"
               src="https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764293017/logo_wkleeh.png"
               alt="logo"
             />
-            <div>
-              <h2 className="text-lg md:text-2xl font-bold">درايڤ سيڤ</h2>
-              <span>قيادة آمنة</span>
-            </div>
-          </div>
+            <h2 className="text-lg md:text-3xl font-bold">DriveSafe</h2>
+          </a>
           <p className="text-ring max-w-10/12">
             نقدم دورات لتعليم قيادة السيارات الأتوماتيك والمانيوال مع مدربين
             معتمدين وخبرة تزيد عن 10 عاماً

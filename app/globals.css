@@ -131,7 +131,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
 }
 ::-webkit-scrollbar {
   width: 10px;
