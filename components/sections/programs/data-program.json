@@ -4,7 +4,7 @@
     "heading": "برنامج الممارسة",
     "description": "نركّز خلال الكورس على معالجة نقاط الضعف في مهارات القيادة الأساسية.",
     "priceBeforeDiscount": 1500,
-    "priceAfterDiscount": 1000,
+    "priceAfterDiscount": 1150,
     "features": [
       {
         "id": 0,
@@ -43,8 +43,8 @@
     "id": "comprehensive",
     "heading": "البرنامج الشامل",
     "description": "تدريب مكثف من الصفر حتى الاحتراف.",
-    "priceBeforeDiscount": 2000,
-    "priceAfterDiscount": 1350,
+    "priceBeforeDiscount": 2100,
+    "priceAfterDiscount": 1450,
     "isSpecial": true,
     "features": [
       {
@@ -69,10 +69,10 @@
     "id": "traffic",
     "heading": "برنامج اختبار المرور",
     "description": "تجهيز عملي ونظري لاجتياز اختبار رخصة القيادة بثقة.",
-    "priceBeforeDiscount": 500,
+    "priceBeforeDiscount": 600,
     "priceAfterDiscount": 450,
     "features": [
-      { "id": 0, "icon": "FaClock", "label": "2 حصص" },
+      { "id": 0, "icon": "FaClock", "label": "1 حصة (90 دقيقة)" },
       {
         "id": 1,
         "icon": "FaRoad",
@@ -135,7 +135,7 @@
     "id": "single",
     "heading": "برنامج الحصة الواحدة",
     "description": "جلسة تدريب فردية لمدة ٥٠ دقيقة مخصصة لمهارة معينة حسب احتياجك.",
-    "priceBeforeDiscount": 250,
+    "priceBeforeDiscount": 300,
     "priceAfterDiscount": null,
     "isSpecial": false,
     "features": [

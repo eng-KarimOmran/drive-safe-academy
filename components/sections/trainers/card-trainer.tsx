@@ -4,8 +4,8 @@ import { ITrainer } from "@/type/type";
 export default function CardTrainer({ trainer }: { trainer: ITrainer }) {
   const srcImg =
     trainer.gender === "male"
-      ? "https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764293038/avatar-male_mvn7ez.png"
-      : "https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764292887/avatar-female_kkwz7b.png";
+      ? "https://res.cloudinary.com/djim8u2rt/image/upload/v1766936433/avatar-male_wzjwly.png"
+      : "https://res.cloudinary.com/djim8u2rt/image/upload/v1766936431/avatar-female_wocpq1.png";
 
   return (
     <div className="bg-background rounded-2xl shadow-lg p-5 space-y-1 w-full max-w-3xs">
