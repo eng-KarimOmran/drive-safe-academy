@@ -7,7 +7,7 @@ export default function CardContact({ item }: { item: IContactItem }) {
       <span className="text-3xl">{GetIcon(item.icon)}</span>
       <div className="flex flex-col">
         <span className="text-lg font-medium">{item.label}</span>
-        <span>{item.value}</span>
+        <span className="text-sm">{item.value}</span>
       </div>
     </div>
   );

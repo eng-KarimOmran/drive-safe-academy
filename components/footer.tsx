@@ -30,7 +30,7 @@ export default function Footer() {
     {
       id: "gmail",
       icon: <IoMdMail />,
-      url: "mailto:algnana740@gmail.com",
+      url: "mailto:drivesafe.academy.car@gmail.com",
       color: "hover:text-red-600",
     },
     {

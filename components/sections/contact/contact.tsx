@@ -13,7 +13,7 @@ export default function Contact() {
         نحن هنا للإجابة على استفساراتك ومساعدتك في بدء رحلة تعلم القيادة
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 py-10 gap-4">
-        <ul className="bg-background space-y-4 rounded-2xl shadow-md p-4">
+        <ul className="bg-background flex flex-col justify-between rounded-2xl shadow-md p-4">
           {contactItems.map((item) => (
             <li key={item.id}>
               <CardContact item={item} />

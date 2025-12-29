@@ -30,7 +30,7 @@ export default function SubscribeProgramForm({
     },
     validationSchema: formSubscribeSchema,
     onSubmit: async (values) => {
-      const res = await fetch("/api/send-subscription-email", {
+      const res = await fetch("/api/send-subscription", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

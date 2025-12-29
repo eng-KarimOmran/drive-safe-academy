@@ -79,6 +79,7 @@ export default function ContactForm() {
           id="message"
           placeholder="اكتب رسالتك هنا"
           name="message"
+          className="max-h-16"
         />
         {formik.errors.message && formik.touched.message && (
           <MessageError error={formik.errors.message} />
