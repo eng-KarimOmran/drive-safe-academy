@@ -12,5 +12,4 @@ export const formSubscribeSchema = Yup.object({
     .required("رقم الموبايل مطلوب"),
   carType: Yup.string().required("اختر نوع السيارة"),
   trainingArea: Yup.string().required("اختر منطقة التدريب"),
-  picture: Yup.mixed().required("الرجاء رفع صورة الإيصال"),
 });

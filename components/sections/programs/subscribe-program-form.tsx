@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Button } from "../../ui/button";
 import { formSubscribeSchema } from "@/lib/schema-form-subscribe";
 import { Spinner } from "../../ui/spinner";
-import { handleUpload } from "@/lib/uploadToCloudinary";
 import { toast } from "sonner";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -15,7 +14,9 @@ interface SubscribeProgramFormProps {
   programName: string;
 }
 
-export default function SubscribeProgramForm({programName}: SubscribeProgramFormProps) {
+export default function SubscribeProgramForm({
+  programName,
+}: SubscribeProgramFormProps) {
   const carTypes = ["مانيوال", "اوتوماتيك"];
   const areas = ["الشاطبي", "سموحة", "السيوف"];
   const router = useRouter();
@@ -26,12 +27,9 @@ export default function SubscribeProgramForm({programName}: SubscribeProgramForm
       phone: "",
       carType: "",
       trainingArea: "",
-      picture: null as File | null,
     },
     validationSchema: formSubscribeSchema,
     onSubmit: async (values) => {
-      const file = values.picture as File;
-      const url = await handleUpload(file);
       const res = await fetch("/api/send-subscription-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -41,7 +39,6 @@ export default function SubscribeProgramForm({programName}: SubscribeProgramForm
           phone: values.phone,
           carType: values.carType,
           trainingArea: values.trainingArea,
-          url: url,
         }),
       });
       const data = await res.json();
@@ -62,14 +59,7 @@ export default function SubscribeProgramForm({programName}: SubscribeProgramForm
       onSubmit={formik.handleSubmit}
     >
       <div className="grid w-full gap-3">
-        <Label htmlFor="programName">اسم البرنامج</Label>
-        <Input
-          type="text"
-          id="programName"
-          name="programName"
-          disabled
-          value={formik.values.programName}
-        />
+        <label className="text-center font-bold text-2xl">{programName}</label>
       </div>
 
       <div className="grid w-full gap-3">
@@ -101,22 +91,6 @@ export default function SubscribeProgramForm({programName}: SubscribeProgramForm
         />
         {formik.touched.phone && formik.errors.phone && (
           <p className="text-red-500 text-sm">{formik.errors.phone}</p>
-        )}
-      </div>
-
-      <div className="grid w-full gap-3">
-        <Label htmlFor="picture">صورة إيصال الدفع</Label>
-        <Input
-          type="file"
-          id="picture"
-          name="picture"
-          accept="image/*"
-          onChange={(e) =>
-            formik.setFieldValue("picture", e.currentTarget.files?.[0])
-          }
-        />
-        {formik.touched.picture && formik.errors.picture && (
-          <p className="text-red-500 text-sm">{formik.errors.picture}</p>
         )}
       </div>
 
