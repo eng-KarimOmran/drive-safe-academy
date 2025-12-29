@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
       <div className="w-full max-w-xl p-4 overflow-hidden">
         <img
-          src="https://res.cloudinary.com/dpuvf3gfs/image/upload/v1764292984/heroSec_csgym1.png"
+          src="https://res.cloudinary.com/djim8u2rt/image/upload/v1767033713/hero-sec_xwkpkq.png"
           alt="hero section"
           className="w-full rounded-2xl"
         />
