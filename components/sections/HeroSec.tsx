@@ -16,7 +16,7 @@ export default function HeroSecFs() {
     <section className="relative min-h-dvh w-full overflow-hidden flex justify-center items-center">
       {/* Background Image */}
       <Image
-        src="/1711011936821.gif"
+        src="/heroSec.gif"
         alt="تدريب على القيادة الآمنة"
         fill
         priority

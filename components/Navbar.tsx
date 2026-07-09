@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <div className="flex items-center justify-center rounded-full bg-white p-1 shadow-md ring-1 ring-black/5">
             <Image
-              src="/logo.png" // ضع اسم اللوجو هنا
+              src="/favicon.ico" // ضع اسم اللوجو هنا
               alt="Drive Safe"
               width={150}
               height={150}
