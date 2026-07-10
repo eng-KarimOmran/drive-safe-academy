@@ -16,10 +16,9 @@ export default function AcademyRulesDialog({
   academy,
 }: AcademyRulesDialogProps) {
   const { name, academyRules } = academy;
-
   return (
     <Dialog defaultOpen>
-      <DialogContent showCloseButton={false}>
+      <DialogContent showCloseButton={false} className="w-full overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-center">شروط وقواعد {name}</DialogTitle>
           <DialogDescription className="text-center">
