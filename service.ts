@@ -1,6 +1,8 @@
-import { Academy, ApiResponse, Area, PlanDetails } from "./type";
+import { notFound } from "next/navigation";
+import { env } from "./config/env";
+import { Academy, ApiResponse, Area, ICustomerDetails, PlanDetails } from "./type";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_URL = env.API_URL
 
 export async function getPlans(): Promise<PlanDetails[]> {
     try {
@@ -47,5 +49,20 @@ export async function getAreas(): Promise<Area[]> {
     } catch (error) {
         console.error("خطأ في جلب بيانات المناطق:", error);
         return []
+    }
+}
+
+export async function getCustomer(customerId: string): Promise<ICustomerDetails> {
+    try {
+        const res = await fetch(`${API_URL}/client/${customerId}`, {
+            next: { revalidate: 3600 },
+        });
+        if (!res.ok) {
+            throw new Error(`فشل جلب المناطق: ${res.status}`);
+        }
+        const data: ApiResponse<ICustomerDetails> = await res.json();
+        return data.data
+    } catch {
+        notFound();
     }
 }

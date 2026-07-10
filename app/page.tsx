@@ -6,10 +6,12 @@ import Trainers from "../components/sections/Trainers";
 import WhyUs from "../components/sections/WhyUs";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
+import Navbar from "@/components/Navbar";
 
 export default function App() {
   return (
     <section className="relative">
+      <Navbar />
       <HeroSec />
       <WhyUs />
       <Comparison />

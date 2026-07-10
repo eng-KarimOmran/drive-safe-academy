@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Toaster } from "sonner";
 import FacebookPixel from "./script/FacebookPixel";
@@ -75,8 +74,7 @@ export default function RootLayout({
 
   return (
     <html lang="ar" dir="rtl" className={cairo.variable}>
-      <body className="min-h-screen flex flex-col font-sans antialiased">
-        <Navbar />
+      <body className="min-h-screen flex flex-col font-sans antialiased dark">
         {children}
         <Footer />
         <Toaster richColors={true} position="top-center" />

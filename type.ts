@@ -26,6 +26,7 @@ export type SocialMediaPlatform =
 
 export type Academy = {
     id: string;
+    name: string
     academyPhones: AcademyPhone[];
     addresses: Address[];
     socialMedia: SocialMedia[];
@@ -59,8 +60,6 @@ export type PaymentLink = {
     academyId: string;
 };
 
-export type SupportType = 'AUTOMATIC' | 'MANUAL' | "BOTH"
-
 export interface Area {
     id: string;
     name: string;
@@ -73,3 +72,92 @@ export interface ApiResponse<T> {
     statusCode: number;
     data: T;
 }
+
+// Customer
+
+export interface ICustomerDetails {
+    id: string;
+    name: string;
+    phone: string;
+    subscriptions: ISubscription[];
+    academy: IAcademy;
+}
+
+export interface ISubscription {
+    id: string;
+    subscriptionStatus: SubscriptionStatus;
+    courseName: string;
+    priceAtBooking: number;
+    totalSessions: number;
+    sessionDurationMinutes: number;
+    requiredInitialDeposit: number;
+    sessionsBeforeFullPayment: number;
+    trainingTypeAtRegistration: SupportType;
+    walletMovements: IWalletMovement[];
+    lessons: ILesson[];
+}
+
+export interface IWalletMovement {
+    id: string
+    transactionType: TransactionType;
+    paymentMethod: PaymentMethod;
+    amount: string;
+    walletMovementStatus: WalletMovementStatus;
+    paymentProofImageId: string | null;
+    createdAt: string;
+}
+
+export interface ILesson {
+    id: string;
+    startTime: string;
+    endTime: string;
+    lessonStatus: LessonStatus;
+    sessionDurationMinutes: number;
+    expectedPaymentAmount: number;
+    transmission: SupportType
+    jobProfile: {
+        user: {
+            name: string;
+            phone: string;
+        }
+    }
+}
+
+export interface IAcademy {
+    name: string;
+    academyRules: {
+        id: string
+        content: string;
+    }[];
+}
+
+export type SubscriptionStatus =
+    | "PENDING_DEPOSIT"
+    | "PENDING_FIRST_SESSION"
+    | "GRACE_PERIOD"
+    | "SUSPENDED"
+    | "ACTIVE"
+    | "CANCELED"
+    | "COMPLETED"
+    | "FULLY_BOOKED"
+
+export type TransactionType =
+    | "SUBSCRIPTION_CREATED"
+    | "CUSTOMER_PAYMENT";
+
+export type PaymentMethod =
+    | "MONETARY"
+    | "ELECTRONIC";
+
+export type WalletMovementStatus =
+    | "PENDING"
+    | "APPROVED"
+    | "REJECTED";
+
+export type LessonStatus =
+    | 'SCHEDULED'
+    | 'COMPLETED'
+    | 'CANCELED'
+    | 'CANCELED_CHARGED'
+
+export type SupportType = 'AUTOMATIC' | 'MANUAL' | "BOTH"
