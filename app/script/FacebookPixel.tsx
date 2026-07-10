@@ -1,6 +1,12 @@
 import Script from "next/script";
 
-export default function FacebookPixel() {
+type FacebookPixelProps = {
+  pixelId?: string;
+};
+
+export default function FacebookPixel({ pixelId }: FacebookPixelProps) {
+  if (!pixelId) return null;
+
   return (
     <>
       {/* Meta Pixel Code */}
@@ -17,7 +23,7 @@ export default function FacebookPixel() {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1598851514959763');
+            fbq('init', '${pixelId}');
             fbq('track', 'PageView');
           `,
         }}
@@ -28,7 +34,7 @@ export default function FacebookPixel() {
           height="1"
           width="1"
           style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=1598851514959763&ev=PageView&noscript=1"
+          src={`https://www.facebook.com/tr?id=${pixelId}&ev=PageView&noscript=1`}
           alt=""
         />
       </noscript>
