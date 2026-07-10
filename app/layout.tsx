@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Footer";
 import { Toaster } from "sonner";
+import FacebookPixel from "./script/FacebookPixel";
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
@@ -70,6 +71,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+
   return (
     <html lang="ar" dir="rtl" className={cairo.variable}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
@@ -78,6 +81,7 @@ export default function RootLayout({
         <Footer />
         <Toaster richColors={true} position="top-center" />
       </body>
+      <FacebookPixel pixelId={pixelId} />
     </html>
   );
 }
