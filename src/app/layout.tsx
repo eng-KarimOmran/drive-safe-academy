@@ -3,7 +3,6 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/sections/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-import FacebookPixel from "@/script/FacebookPixel";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -94,14 +93,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-icon-192x192.png", sizes: "192x192", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/apple-icon.png",
   },
 
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -109,16 +108,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
-
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} h-full`}>
       <body className="font-sans antialiased">
         <Navbar />
-        <main className="w-full pt-16">{children}</main>
+        {children}
         <Footer />
       </body>
-      <FacebookPixel pixelId={pixelId} />
     </html>
   );
 }
