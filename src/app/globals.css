@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary:#49ac22;
+  --color-primary-rgb: 238, 118, 25;
+}
+
+@theme {
+  --color-primary:#49ac22;
+}
+
+.link-hover {
+  position: relative;
+}
+
+.link-hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.link-hover:hover::after {
+  width: 80%;
+}
+
+.background {
+  background-image: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+}
+
+section {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(var(--color-primary-rgb), 0.12),
+      transparent 35%
+    ),
+    linear-gradient(180deg, #ffffff 0%, #fffaf5 100%);
+}
