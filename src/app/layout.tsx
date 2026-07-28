@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/sections/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import FacebookPixel from "@/script/FacebookPixel";
 
 const cairo = Cairo({
   variable: "--font-cairo",
@@ -108,6 +109,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+
   return (
     <html lang="ar" dir="rtl" className={`${cairo.variable} h-full`}>
       <body className="font-sans antialiased">
@@ -115,6 +118,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      <FacebookPixel pixelId={pixelId} />
     </html>
   );
 }
